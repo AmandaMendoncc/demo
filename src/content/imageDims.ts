@@ -1,0 +1,17 @@
+export const IMAGE_DIMS: Record<string, { width: number; height: number }> = {
+  'adms-arquitetura-dms.png': { width: 1326, height: 883 },
+  'adms-criterios-localizacao-falta.png': { width: 1126, height: 348 },
+  'adms-gestao-falta-restauracao.png': { width: 1724, height: 895 },
+  'adms-rede-distribuicao-a.png': { width: 475, height: 323 },
+  'adms-rede-distribuicao-b.png': { width: 1409, height: 664 },
+  'arquitetura-centro-controle.png': { width: 822, height: 1147 },
+  'arquitetura-solucao-adms.png': { width: 1767, height: 997 },
+  'dts-telas-instrutor.png': { width: 1833, height: 544 },
+  'oms-arquitetura-funcional.png': { width: 1857, height: 1057 },
+  'oms-janela-gestao-eventos.png': { width: 1071, height: 516 },
+  'oms-relatorios-saidi-saifi.png': { width: 1115, height: 576 },
+  'scada-ambiente-scripts.png': { width: 1177, height: 585 },
+  'scada-camadas.png': { width: 835, height: 463 },
+  'scada-resumo-eventos.png': { width: 1399, height: 482 },
+  'scada-tendencias.png': { width: 1486, height: 703 },
+}
