@@ -13,7 +13,7 @@ interface FigureBlockProps {
 
 export default function FigureBlock({ src, alt, caption, width, height, wide = true }: FigureBlockProps) {
   const [open, setOpen] = useState(false)
-  const fullSrc = `/assets/img/${src}`
+  const fullSrc = `${import.meta.env.BASE_URL}assets/img/${src}`
 
   return (
     <figure className="group my-7 overflow-hidden border border-sky-300 bg-cream-50 shadow-soft transition-shadow duration-300 ease-premium hover:shadow-elevated">

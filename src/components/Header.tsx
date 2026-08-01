@@ -38,7 +38,7 @@ export default function Header() {
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <NavLink to="/" className="flex items-center gap-2.5 focus-ring" onClick={() => setOpen(false)}>
           <img
-            src="/assets/img/logo-sharika-spintech-icon.png"
+            src={`${import.meta.env.BASE_URL}assets/img/logo-sharika-spintech-icon.png`}
             alt=""
             className="h-8 w-8 sm:h-9 sm:w-9"
             width={132}

@@ -9,9 +9,46 @@ sem CMS — pronto para deploy em Netlify/Vercel/GitHub Pages.
 ```bash
 npm install
 npm run dev       # ambiente de desenvolvimento (http://localhost:5173)
-npm run build     # build de produção em ./dist
-npm run preview   # serve o build de produção localmente
+npm run build     # build de produção em ./dist (gera também dist/404.html, ver Deploy)
+npm run preview   # serve o build de produção localmente, já respeitando o base path
 ```
+
+## Deploy (GitHub Pages)
+
+O site está configurado para publicar em `https://<seu-usuário>.github.io/demo/`
+via GitHub Actions, sem precisar de branch `gh-pages` nem de nenhum passo manual de
+build/push.
+
+**Passo único e manual, na primeira vez:** no GitHub, abra o repositório → **Settings
+→ Pages** → em "Build and deployment", mude **Source** para **"GitHub Actions"**
+(se ainda estiver em "Deploy from a branch"). Depois disso, todo `git push` na
+branch `main` builda e publica o site automaticamente — acompanhe em **Actions**.
+
+Detalhes técnicos do que foi configurado (só necessário entender se for renomear
+o repositório ou trocar de host):
+
+- `vite.config.ts` define `base: '/demo/'` — precisa bater com o nome do repositório
+  (`https://usuário.github.io/<nome-do-repo>/`). Se o repo for renomeado, atualize
+  aqui também.
+- `src/main.tsx` passa `basename="/demo"` para o `<BrowserRouter>`, para as 4 rotas
+  resolverem sob esse mesmo prefixo.
+- Como `base` não é mais `/`, referências diretas a arquivos de `public/` no código
+  usam `import.meta.env.BASE_URL` (em `Header.tsx` e `FigureBlock.tsx`) e o HTML usa
+  o placeholder `%BASE_URL%` (em `index.html`) em vez de caminhos como `/favicon.png`
+  — sem isso, imagens e favicon quebrariam em produção.
+- `npm run build` roda um `postbuild` (`cp dist/index.html dist/404.html`): GitHub
+  Pages não tem rewrite de servidor, então sem isso, acessar `/scada` diretamente
+  (ou dar refresh) resultaria em 404. Com o 404.html idêntico ao index.html, o
+  React Router assume a partir da URL e renderiza a rota certa.
+- `.github/workflows/deploy.yml` builda (`npm ci && npm run build`) e publica a
+  pasta `dist/` a cada push em `main`, usando as actions oficiais do GitHub Pages
+  (`upload-pages-artifact` + `deploy-pages`).
+
+Para hospedar em Vercel/Netlify/Cloudflare Pages em vez disso, esses três (ao
+contrário do GitHub Pages) servem SPAs na raiz do domínio com rewrite automático
+de rotas — nesse caso, reverta `base` para `/` no `vite.config.ts`, remova o
+`basename` do `BrowserRouter` e o `postbuild` deixa de ser necessário (mas não atrapalha
+se ficar).
 
 ## Onde editar o conteúdo
 
