@@ -6,209 +6,101 @@ export const scada: PageContent = {
     title: 'SCADA: Supervisory Control and Data Acquisition',
     subtitle: 'Supervision, operation, and visualization layer',
     navLabel: 'SCADA',
-    demoLabel: 'SCADA',
   },
   blocks: [
-    { kind: 'heading', level: 2, number: '4.1', text: 'SCADA Module Overview' },
     {
       kind: 'paragraph',
-      text: 'The SpinTech SCADA module constitutes the supervision, operation, and visualization layer of the ADMS system. Its primary function is to provide operators with a complete and up-to-date representation of the electrical system through graphical interfaces, operational control capabilities, alarm management, historical data storage, and real-time analysis tools.',
-    },
-    {
-      kind: 'paragraph',
-      text: 'In the proposed architecture, all functions related to field-device communication, telecontrol protocols, and data acquisition are handled by the SpinTech Edge module. The SCADA module receives this information via an integration infrastructure based on the TRemoteClient protocol, transparently inheriting the structure of points, states, events, alarms, measurements, and operational attributes required for grid supervision and operation.',
-    },
-    {
-      kind: 'paragraph',
-      text: 'The platform provides a unified Human-Machine Interface (HMI) for operators, engineers, supervisors, and other authorized users, supporting local, remote, and web-browser access. Navigation is based on single-line diagrams, substation displays, operational dashboards, alarm and event lists, trends, and reports, ensuring a consistent operational experience across the entire ADMS environment.',
-    },
-    {
-      kind: 'paragraph',
-      text: 'The SCADA functional architecture comprises the following main modules:',
-    },
-    {
-      kind: 'list',
-      items: [
-        'Displays (HMI);',
-        'Alarms and Events;',
-        'Supervisory Control;',
-        'Historian and Trends;',
-        'Reports;',
-        'Scripts and Automation;',
-        'Security and User Management.',
-      ],
+      text: 'GridQ SCADA is the module that constitutes the operational foundation of electrical network management systems, being responsible for network supervision, event processing, historical storage, and execution of remote commands on field equipment.',
     },
     {
       kind: 'figure',
       src: 'scada-camadas.png',
-      alt: 'SpinTech SCADA layers',
-      caption: 'SpinTech SCADA layers',
+      alt: 'GridQ SCADA layers',
+      caption: 'GridQ SCADA layers',
     },
 
-    { kind: 'heading', level: 2, number: '4.2', text: 'SCADA Data Sources and Types' },
+    { kind: 'heading', level: 2, text: 'Architecture and Operation' },
     {
       kind: 'paragraph',
-      text: 'Although information acquisition is performed by SpinTech Edge, the SCADA module maintains a complete operational representation of the electrical network through the TRemoteClient integration.',
+      text: 'GridQ SCADA is designed with a modular and redundant architecture, operating in 64-bit environments, with high availability and support for multiple communication protocols used in power distribution systems.',
     },
     {
       kind: 'paragraph',
-      text: 'The main types of data made available to the SCADA include:',
+      text: 'The module is integrated with GridQ Edge FEP, receiving from it information from field devices, such as circuit breakers, reclosers, sectionalizers, fault passage indicators (FPI), and remote terminal units (RTUs/FRTUs), collecting analog quantities (voltage, current, active and reactive power, power factor, imported/exported energy, transformer temperature, TAP position, among others), digital states, and chronological event records (Sequence of Events, SOE).',
     },
+
+    { kind: 'heading', level: 2, text: 'Data Processing and Validation' },
+    { kind: 'paragraph', text: 'SCADA incorporates advanced processing functions, including:' },
     {
       kind: 'list',
       items: [
-        'Analog measurements from substations, feeders, and distribution automation devices;',
-        'Digital states of switching and protection equipment;',
-        'Information from reclosers, RMUs, remote-controlled switches, and other automated assets;',
-        'Fault passage indications (FPI);',
-        'SOE events with timestamp;',
-        'Calculated data and operational indicators;',
-        'Information entered manually by operators;',
-        'Corporate electrical model data in CIM standard (IEC 61968/61970).',
+        'Conversion to engineering units;',
+        'Operational limit monitoring;',
+        'Telemetry fault detection;',
+        'Consistency verification of received values;',
+        'Rate of Change calculation;',
+        'Information quality code management.',
       ],
     },
     {
       kind: 'paragraph',
-      text: 'When available, the electrical model can be automatically loaded from corporate GIS systems through CIM/XML adapters, reducing manual modelling activities and ensuring consistency between the corporate and operational environments.',
+      text: 'These functions ensure that operators have access to reliable data for operational decision-making.',
     },
 
-    { kind: 'heading', level: 2, number: '4.3', text: 'Supervisory Control' },
+    { kind: 'heading', level: 2, text: 'Supervision and Remote Control' },
     {
       kind: 'paragraph',
-      text: 'SpinTech SCADA provides supervisory control features for the remote operation of electrical network assets. The command process follows the Select-Check-Before-Operate (SCBO) philosophy, ensuring that all operational and security verifications are completed before the command is executed.',
+      text: 'In the scope of supervision and control, it allows the safe execution of remote commands, such as opening and closing of circuit breakers, reclosers, sectionalizers, and capacitor banks, in addition to TAP raise/lower commands and sending setpoints to intelligent devices.',
     },
     {
       kind: 'paragraph',
-      text: 'Command transmission to field devices is performed by SpinTech Edge, with the SCADA responsible for operational validation, process coordination, and operator interaction.',
-    },
-    {
-      kind: 'paragraph',
-      text: 'The main types of control supported include:',
-    },
-    {
-      kind: 'list',
-      items: [
-        'Opening and closing of circuit breakers, reclosers, and switches;',
-        'Capacitor bank control;',
-        'Fault indicator reset;',
-        'Voltage regulator and OLTC control;',
-        'Setpoint control;',
-        'Group control;',
-        'Automatic execution of switching sequences.',
-      ],
-    },
-    {
-      kind: 'paragraph',
-      text: 'The system incorporates operational interlocking mechanisms, blocking tags, permission validation, and a comprehensive audit of user-performed operations.',
-    },
-    {
-      kind: 'paragraph',
-      text: 'Before executing any command, conditions such as telemetry availability, equipment operating mode, active blocks, maintenance status, configured interlocks, and operator permissions are automatically verified.',
+      text: 'The command process normally follows the Select-Check-Before-Operate (SCBO) philosophy, ensuring that all operational and security checks are completed before the command is executed. The system also features interlocking mechanisms, operational blocking, permission validation, and a complete audit trail for all actions performed by operators.',
     },
 
-    { kind: 'heading', level: 2, number: '4.4', text: 'SCADA Programming Language and Automation' },
+    { kind: 'heading', level: 2, text: 'Human-Machine Interface (HMI)' },
     {
       kind: 'paragraph',
-      text: 'The SpinTech SCADA automation environment enables the development of operational logics, calculations, integrations, and utility-specific functionalities.',
-    },
-    {
-      kind: 'paragraph',
-      text: 'The following technologies are supported:',
-    },
-    {
-      kind: 'list',
-      items: [
-        'C# and VB.NET for automations, calculations, and operational logic;',
-        'Python for advanced analyses, artificial intelligence, and external integrations;',
-        'JavaScript for dashboards and HTML5 interfaces;',
-        'Automation framework with functionalities equivalent to IEC 61131-3.',
-      ],
-    },
-    {
-      kind: 'paragraph',
-      text: 'The C# and VB.NET scripts are compiled, providing high execution performance. The environment offers advanced engineering features, including automatic cross-references, object updates, integrated debugging, step-by-step execution, variable monitoring and exception tracking.',
-    },
-    {
-      kind: 'paragraph',
-      text: 'These features enable operational automation, real-time calculations, and other functionalities required for the supervisory system’s operation.',
-    },
-    {
-      kind: 'figure',
-      src: 'scada-ambiente-scripts.png',
-      alt: 'Environment for writing, compiling, and debugging scripts',
-      caption: 'Environment for writing, compiling, and debugging scripts',
+      text: 'The human-machine interface offers substation single-line diagrams, alarm and event panels, historical trends, operational dashboards, and configurable reports. The environment normally supports local, web, and mobile-device access, allowing secure access to operational information at different levels of the organization.',
     },
 
-    { kind: 'heading', level: 2, number: '4.5', text: 'Historical Storage and Operational Playback' },
+    { kind: 'heading', level: 2, text: 'Automation and Programming Languages' },
     {
       kind: 'paragraph',
-      text: 'The Historian sub-module is responsible for the continuous storage of operational information received by the SCADA. The following are stored:',
-    },
-    {
-      kind: 'list',
-      items: [
-        'Analog measurements;',
-        'Digital states;',
-        'Alarms;',
-        'Events;',
-        'Energy data;',
-        'Calculated variables;',
-        'Operational records and audits.',
-      ],
-    },
-    {
-      kind: 'paragraph',
-      text: 'The data is maintained in PostgreSQL relational databases residing on the ISR (Information, Storage, and Retrieval) server. The minimum online retention period is 2 years, meeting the utility’s operational, regulatory, and historical analysis requirements.',
-    },
-    {
-      kind: 'paragraph',
-      text: 'In addition to historical storage, the system provides Operational Playback functionalities, enabling reconstruction of the electrical network state at any point in the past directly on single-line diagrams and operational screens.',
-    },
-    {
-      kind: 'paragraph',
-      text: 'The module also offers advanced graphical and tabular trend features, enabling temporal analysis, variable comparison, time zoom, and investigation of operational occurrences.',
-    },
-    {
-      kind: 'figure',
-      src: 'scada-tendencias.png',
-      alt: 'Real-time and historical trends available in SCADA',
-      caption: 'Real-time and historical trends available in SCADA',
+      text: 'Advanced SCADA environments offer automation features that enable the development of operational logic, calculations, and custom integrations, with support for languages such as C#, VB.NET, Python (for advanced analyses and artificial intelligence), and JavaScript (for dashboards and web interfaces), in addition to automation frameworks equivalent to the IEC 61131-3 standard.',
     },
 
-    { kind: 'heading', level: 2, number: '4.6', text: 'Sequence of Events (SOE)' },
+    { kind: 'heading', level: 2, text: 'Historical Storage and Sequence of Events' },
     {
       kind: 'paragraph',
-      text: 'The SOE module enables the chronological consolidation of events from SpinTech Edge-supervised equipment.',
-    },
-    {
-      kind: 'paragraph',
-      text: 'Events are received by the SCADA through the TRemoteClient infrastructure, preserving their original timestamps and enabling the precise reconstruction of occurrences recorded in the electrical network.',
+      text: 'The Historian submodule is responsible for the continuous storage of analog measurements, digital states, alarms, events, energy data, and audit records in relational databases. In addition to storage, SCADA platforms typically offer operational playback functionalities, allowing the state of the electrical network to be reconstructed at any point in the past directly on the single-line diagrams.',
     },
     {
       kind: 'paragraph',
-      text: 'Each SOE record can store:',
+      text: 'The Sequence of Events (SOE) module allows the chronological consolidation of events, preserving original timestamps and enabling the precise reconstruction of occurrences in the electrical network, an essential tool for post-fault analysis, disturbance investigation, and operational auditing.',
     },
+
+    { kind: 'heading', level: 2, text: 'Demo Application' },
     {
-      kind: 'list',
-      items: [
-        'Date and time of the occurrence;',
-        'Associated equipment;',
-        'Event type;',
-        'Previous and subsequent state;',
-        'Information quality;',
-        'Event source;',
-        'Related installation or feeder.',
-      ],
+      kind: 'paragraph',
+      text: 'The GridQ SCADA presented in this demonstration is based on a real application used in the operation and supervision of the electrical distribution network of the capital of Brazil, responsible for serving approximately 3 million inhabitants.',
     },
     {
       kind: 'paragraph',
-      text: 'Events are stored in the alarm and event historical database and remain available for online queries and historical analyses. The event interface allows filtering by period, installation, equipment, feeder, category, or occurrence type, supporting operations, post-fault analysis, disturbance investigation, and operational auditing. This functionality is one of the main operational analysis tools in the SCADA system, providing complete traceability of electrical system events and enabling a detailed understanding of network behaviour under normal conditions, contingencies, and emergencies.',
+      text: 'The solution performs real-time monitoring and remote control of more than 52 distribution substations at 13.8 kV, allowing operators of the System Operations Centre (COS) to supervise, in real time, the state of equipment, execute switching operations, track electrical measurements, identify alarms, and quickly respond to network occurrences.',
     },
     {
-      kind: 'figure',
-      src: 'scada-resumo-eventos.png',
-      alt: 'Event summary with dozens of columns available in SCADA',
-      caption: 'Event summary with dozens of columns available in SCADA',
+      kind: 'paragraph',
+      text: 'The substation presented in the demonstration is SE Planaltina, located in the Administrative Region of Planaltina, Federal District. This region serves an extensive urban and rural area, playing an important role in supplying power to residential, commercial, industrial, and essential public-service consumers. The interface demonstrates how the operator visualizes the substation topology, tracks the state of switches and circuit breakers, monitors electrical quantities, and executes switching operations in a safe and traceable manner.',
     },
+    { kind: 'video' },
+    {
+      kind: 'paragraph',
+      text: 'In addition to operational supervision, GridQ SCADA offers specialized applications for monitoring the voltage quality of the electrical network. Through a dedicated interface, operators continuously track the voltage levels of substation busbars, verifying their compliance with established operational limits.',
+    },
+    {
+      kind: 'paragraph',
+      text: 'The system presents, in real time, voltage values, deviation alarms, historical trends, and operational indicators, allowing the rapid identification of overvoltage or undervoltage conditions. This information supports decision-making for executing switching operations, changing transformer taps, controlling capacitor banks, and other actions needed to keep voltage levels within technical and regulatory standards, ensuring greater reliability, quality of supply, and operational safety.',
+    },
+    { kind: 'video' },
   ],
 }

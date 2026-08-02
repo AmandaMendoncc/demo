@@ -5,15 +5,21 @@ import { home } from '../content/home'
 
 const NAV_CARDS = [
   {
+    to: '/fep',
+    code: 'FE',
+    title: 'FEP',
+    description: 'Field data acquisition, multivendor protocol engine, and communication reliability.',
+  },
+  {
     to: '/scada',
     code: 'SC',
     title: 'SCADA',
     description: 'Real-time supervision, remote control, alarms, events, and operational history.',
   },
   {
-    to: '/adms',
-    code: 'AD',
-    title: 'ADMS / DMS',
+    to: '/dms',
+    code: 'DM',
+    title: 'DMS',
     description: 'Single electrical model, power flow, FLISR, Volt/VAR, and network reconfiguration.',
   },
   {
@@ -49,9 +55,9 @@ export default function Home() {
             Technical Detail
           </h2>
           <p className="mb-10 max-w-prose text-ink-900/70">
-            Explore the complete functional design of each module in the Sharika SpinTech platform.
+            Explore the complete functional design of each module in the GridQ platform.
           </p>
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {NAV_CARDS.map((card) => (
               <Link
                 key={card.to}

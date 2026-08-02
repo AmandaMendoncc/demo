@@ -9,7 +9,8 @@
       "Bash(npm ls *)",
       "Read(//home/dev/.cache/ms-playwright/**)",
       "Bash(node -e \"require\\('/home/dev/.npm/_npx/e41f203b7505f1fb/node_modules/playwright'\\); console.log\\('playwright module loads ok'\\)\")",
-      "Bash(node /tmp/claude-1001/-home-dev-Documentos-demo/f77699da-1789-4b04-b65a-7d57e6b60d1e/scratchpad/shot.mjs)"
+      "Bash(node /tmp/claude-1001/-home-dev-Documentos-demo/f77699da-1789-4b04-b65a-7d57e6b60d1e/scratchpad/shot.mjs)",
+      "Bash(timeout 30 node shot-deploy.mjs)"
     ],
     "additionalDirectories": [
       "/home/dev/Documentos/demo/node_modules",

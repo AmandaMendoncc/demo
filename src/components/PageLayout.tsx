@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import type { PageContent } from '../content/types'
 import { useReveal } from '../lib/useReveal'
 import BlockRenderer from './BlockRenderer'
-import ProductDemo from './ProductDemo'
 
 function useDocumentMeta(title: string, description: string) {
   useEffect(() => {
@@ -18,8 +17,7 @@ function useDocumentMeta(title: string, description: string) {
 }
 
 export default function PageLayout({ meta, blocks }: PageContent) {
-  useDocumentMeta(`${meta.title} | Sharika SpinTech`, meta.subtitle)
-  const demoReveal = useReveal<HTMLDivElement>()
+  useDocumentMeta(`${meta.title} | GridQ`, meta.subtitle)
   const contentReveal = useReveal<HTMLDivElement>()
 
   return (
@@ -56,11 +54,7 @@ export default function PageLayout({ meta, blocks }: PageContent) {
         </div>
       </header>
 
-      <div ref={demoReveal.ref} className={demoReveal.className}>
-        <ProductDemo product={meta.demoLabel} />
-      </div>
-
-      <div ref={contentReveal.ref} className={`mx-auto max-w-4xl px-4 pb-8 pt-10 sm:px-6 sm:pt-14 ${contentReveal.className}`}>
+      <div ref={contentReveal.ref} className={`mx-auto max-w-4xl px-4 pb-16 pt-10 sm:px-6 sm:pt-14 ${contentReveal.className}`}>
         <BlockRenderer blocks={blocks} />
       </div>
     </article>

@@ -3,8 +3,9 @@ import { NavLink } from 'react-router-dom'
 
 const NAV_ITEMS = [
   { to: '/', label: 'Overview' },
+  { to: '/fep', label: 'FEP' },
   { to: '/scada', label: 'SCADA' },
-  { to: '/adms', label: 'ADMS / DMS' },
+  { to: '/dms', label: 'DMS' },
   { to: '/oms', label: 'OMS' },
 ]
 
@@ -45,7 +46,7 @@ export default function Header() {
             height={130}
           />
           <span className="text-base font-bold tracking-tight text-white sm:text-lg">
-            Sharika <span className="text-sky-400">SpinTech</span>
+            Grid<span className="text-sky-400">Q</span>
           </span>
         </NavLink>
 
