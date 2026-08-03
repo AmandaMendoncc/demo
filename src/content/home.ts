@@ -6,6 +6,7 @@ export const home: PageContent = {
     title: 'GridQ',
     subtitle: 'Integrated FEP · SCADA · DMS · OMS Platform',
     navLabel: 'Overview',
+    heroImage: 'hero-home.jpg',
   },
   blocks: [
     { kind: 'heading', level: 2, text: 'GridQ: Integrated SCADA, ADMS, and OMS Platform' },

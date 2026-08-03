@@ -8,13 +8,14 @@ export type Block =
   | { kind: 'figure'; src: string; alt: string; caption: string }
   | { kind: 'note'; text: string }
   | { kind: 'video'; label?: string; src?: string; poster?: string }
-  | { kind: 'reportLinks'; items: string[] }
+  | { kind: 'reportLinks'; items: { label: string; file: string }[] }
 
 export interface PageMeta {
   route: string
   title: string
   subtitle: string
   navLabel: string
+  heroImage?: string
 }
 
 export interface PageContent {

@@ -6,6 +6,7 @@ export const oms: PageContent = {
     title: 'OMS: Outage Management System',
     subtitle: 'Outage, call, and continuity indicator management',
     navLabel: 'OMS',
+    heroImage: 'hero-oms.jpg',
   },
   blocks: [
     {
@@ -193,7 +194,7 @@ export const oms: PageContent = {
       kind: 'paragraph',
       text: 'The system automatically generates the report used by the National Power Portal (NPP), containing the SAIDI and SAIFI indicators for each feeder, separated between planned and unplanned occurrences, in addition to information on the number and duration of failures. This report supports the consolidation and submission of corporate indicators.',
     },
-    { kind: 'reportLinks', items: ['Report link'] },
+    { kind: 'reportLinks', items: [{ label: 'Report link', file: 'npp.xlsx' }] },
 
     { kind: 'heading', level: 4, text: 'Complementary Supporting Reports' },
     {
@@ -217,16 +218,16 @@ export const oms: PageContent = {
     {
       kind: 'reportLinks',
       items: [
-        'Report of 11 kV Feeders Shut Down for 1 Hour or More',
-        'Report of 11 kV Feeders that Tripped 3 Times or More',
-        'Summary of Rural Circle Outages',
-        'Communication Status of 11 kV Feeders',
-        'SAIFI and SAIDI by Feeder',
-        'SAIFI and SAIDI by Circle, Division, City, and Section',
-        'SAIFI and SAIDI General Report',
-        'Report of Scheduled Shutdowns (LC) for 11 kV Feeders',
-        'Report of Unscheduled Shutdowns for 11 kV Feeders',
-        'Report of Minimum and Maximum Values for 11 kV Feeders',
+        { label: 'Report of 11 kV Feeders Shut Down for 1 Hour or More', file: '1-1h.xlsx' },
+        { label: 'Report of 11 kV Feeders that Tripped 3 Times or More', file: '2-3trips.xlsx' },
+        { label: 'Summary of Rural Circle Outages', file: '3-abstr.xlsx' },
+        { label: 'Communication Status of 11 kV Feeders', file: '4-feeder_comm.xlsx' },
+        { label: 'SAIFI and SAIDI by Feeder', file: '5-fi_di.xlsx' },
+        { label: 'SAIFI and SAIDI by Circle, Division, City, and Section', file: '6-fi_di_div.xlsx' },
+        { label: 'SAIFI and SAIDI General Report', file: '7-general.xlsx' },
+        { label: 'Report of Scheduled Shutdowns (LC) for 11 kV Feeders', file: '8-planned.xlsx' },
+        { label: 'Report of Unscheduled Shutdowns for 11 kV Feeders', file: '9-unplanned.xlsx' },
+        { label: 'Report of Minimum and Maximum Values for 11 kV Feeders', file: '10-minmax.xlsx' },
       ],
     },
   ],

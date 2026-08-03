@@ -39,7 +39,7 @@ function Heading({ level, text }: { level: 2 | 3 | 4; text: string }) {
 
 export default function BlockRenderer({ blocks }: { blocks: Block[] }) {
   return (
-    <div className="content-flow mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+    <div className="content-flow mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
       {blocks.map((block, i) => {
         switch (block.kind) {
           case 'heading':

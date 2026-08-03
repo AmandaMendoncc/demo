@@ -1,44 +1,36 @@
 import { Link } from 'react-router-dom'
 import PageLayout from '../components/PageLayout'
-import { useReveal } from '../lib/useReveal'
 import { home } from '../content/home'
 
 const NAV_CARDS = [
   {
     to: '/fep',
-    code: 'FE',
     title: 'FEP',
     description: 'Field data acquisition, multivendor protocol engine, and communication reliability.',
   },
   {
     to: '/scada',
-    code: 'SC',
     title: 'SCADA',
     description: 'Real-time supervision, remote control, alarms, events, and operational history.',
   },
   {
     to: '/dms',
-    code: 'DM',
     title: 'DMS',
     description: 'Single electrical model, power flow, FLISR, Volt/VAR, and network reconfiguration.',
   },
   {
     to: '/oms',
-    code: 'OM',
     title: 'OMS',
     description: 'Outage management, consumer calls, field crews, and SAIDI/SAIFI indicators.',
   },
 ]
 
 export default function Home() {
-  const cardsReveal = useReveal<HTMLElement>()
-
   return (
     <>
       <PageLayout {...home} />
       <section
-        ref={cardsReveal.ref}
-        className={`relative overflow-hidden bg-gradient-to-b from-sky-50/70 to-white py-20 sm:py-28 ${cardsReveal.className}`}
+        className="relative overflow-hidden bg-gradient-to-b from-sky-50/70 to-white py-20 sm:py-28"
         aria-labelledby="nav-cards-heading"
       >
         <div
@@ -49,7 +41,7 @@ export default function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-navy-700/10 blur-3xl"
         />
-        <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
           <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-sky-600">Explore the modules</p>
           <h2 id="nav-cards-heading" className="mb-3 font-display text-2xl font-bold tracking-tight text-navy-900 sm:text-3xl">
             Technical Detail
@@ -62,18 +54,12 @@ export default function Home() {
               <Link
                 key={card.to}
                 to={card.to}
-                className="group relative flex flex-col overflow-hidden border border-slate-200 bg-white p-7 shadow-soft transition-all duration-300 ease-premium hover:-translate-y-1 hover:border-sky-400 hover:shadow-elevated focus-ring"
+                className="group relative flex flex-col overflow-hidden border border-slate-200 bg-white p-8 shadow-soft transition-all duration-300 ease-premium hover:-translate-y-1 hover:border-sky-400 hover:shadow-elevated focus-ring"
               >
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-sky-500 transition-transform duration-300 ease-premium group-hover:scale-x-100"
-                />
-                <span className="mb-4 flex h-11 w-11 items-center justify-center bg-navy-900 text-sm font-bold text-sky-400 transition-colors duration-300 ease-premium group-hover:bg-sky-500 group-hover:text-white">
-                  {card.code}
-                </span>
-                <h3 className="mb-2 text-lg font-bold text-navy-900">{card.title}</h3>
-                <p className="mb-4 flex-1 text-sm text-ink-900/70">{card.description}</p>
-                <span className="text-sm font-semibold text-navy-700 underline-offset-4 group-hover:text-sky-600 group-hover:underline">
+                <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-sky-500" />
+                <h3 className="relative mb-2 mt-1 text-lg font-bold text-navy-900">{card.title}</h3>
+                <p className="relative mb-6 flex-1 text-sm text-ink-900/70">{card.description}</p>
+                <span className="relative text-sm font-semibold text-navy-700 underline-offset-4 group-hover:text-sky-600 group-hover:underline">
                   View details
                 </span>
               </Link>

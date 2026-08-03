@@ -77,8 +77,10 @@ export default function Lightbox({ src, alt, onClose }: LightboxProps) {
         <img
           src={src}
           alt={alt}
-          className={`mx-auto max-w-none transition-all duration-200 ease-premium ${visible ? 'scale-100' : 'scale-95'}`}
-          style={{ width: `${zoom * 100}%`, minWidth: '100%' }}
+          className={`mx-auto transition-all duration-200 ease-premium ${visible ? 'scale-100' : 'scale-95'} ${
+            zoom === 1 ? 'h-full max-h-full w-auto max-w-full object-contain' : 'h-auto max-w-none'
+          }`}
+          style={zoom === 1 ? undefined : { width: `${zoom * 100}%`, minWidth: '100%' }}
         />
       </div>
     </div>,

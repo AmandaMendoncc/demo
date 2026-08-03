@@ -6,6 +6,7 @@ export const scada: PageContent = {
     title: 'SCADA: Supervisory Control and Data Acquisition',
     subtitle: 'Supervision, operation, and visualization layer',
     navLabel: 'SCADA',
+    heroImage: 'hero-scada.jpg',
   },
   blocks: [
     {

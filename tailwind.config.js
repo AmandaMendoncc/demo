@@ -5,17 +5,17 @@ export default {
     extend: {
       colors: {
         navy: {
-          900: '#163E64',
-          700: '#1F5183',
+          900: '#004170',
+          700: '#224F70',
         },
         sky: {
           50: '#EEF8FF',
           100: '#DCEFFC',
           200: '#BFE4F7',
           300: '#82CBF2',
-          400: '#4FC3F7',
-          500: '#1FA6E0',
-          600: '#0B6FA3',
+          400: '#49ACF2',
+          500: '#008CF0',
+          600: '#006EBD',
           700: '#075985',
         },
         cream: {
@@ -48,9 +48,9 @@ export default {
         lg: '1024px',
       },
       boxShadow: {
-        soft: '0 1px 2px 0 rgba(22,62,100,0.04), 0 1px 3px 0 rgba(22,62,100,0.06)',
-        elevated: '0 8px 24px -6px rgba(22,62,100,0.14), 0 4px 10px -4px rgba(22,62,100,0.10)',
-        focus: '0 0 0 3px rgba(31,166,224,0.35)',
+        soft: '0 1px 2px 0 rgba(0,65,112,0.04), 0 1px 3px 0 rgba(0,65,112,0.06)',
+        elevated: '0 8px 24px -6px rgba(0,65,112,0.14), 0 4px 10px -4px rgba(0,65,112,0.10)',
+        focus: '0 0 0 3px rgba(0,140,240,0.35)',
       },
       transitionTimingFunction: {
         premium: 'cubic-bezier(0.16, 1, 0.3, 1)',

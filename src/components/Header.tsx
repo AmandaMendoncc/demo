@@ -28,13 +28,15 @@ export default function Header() {
   }, [])
 
   const desktopLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `px-3 py-2 text-sm font-semibold tracking-wide transition-colors duration-300 ease-premium focus-ring ${
-      isActive ? 'text-white' : 'text-slate-400 hover:text-white'
+    `relative px-4 py-2 text-sm font-semibold tracking-wide transition-colors duration-300 ease-premium focus-ring after:absolute after:inset-x-4 after:-bottom-px after:h-[2px] after:origin-left after:bg-sky-400 after:transition-transform after:duration-300 after:ease-premium ${
+      isActive
+        ? 'text-white after:scale-x-100'
+        : 'text-slate-300 hover:text-white after:scale-x-0 hover:after:scale-x-100'
     }`
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 h-20 border-b border-navy-700/80 bg-navy-900/95 shadow-lg shadow-navy-900/30 backdrop-blur-md">
-      <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6">
         <NavLink to="/" className="flex items-center gap-3 focus-ring" onClick={() => setOpen(false)}>
           <img
             src={`${import.meta.env.BASE_URL}assets/img/logo-sharika-spintech-icon.png`}
@@ -48,7 +50,7 @@ export default function Header() {
           </span>
         </NavLink>
 
-        <nav className="hidden md:flex md:items-center md:gap-2" aria-label="Main navigation">
+        <nav className="hidden md:flex md:items-center md:gap-1" aria-label="Main navigation">
           {NAV_ITEMS.map((item) => (
             <NavLink key={item.to} to={item.to} className={desktopLinkClass} end={item.to === '/'}>
               {item.label}
@@ -58,12 +60,27 @@ export default function Header() {
 
         <button
           type="button"
-          className="flex h-11 items-center rounded px-3 text-sm font-semibold uppercase tracking-widest text-white transition-colors duration-300 ease-premium hover:text-sky-300 focus-ring md:hidden"
+          className="flex h-11 w-11 flex-col items-center justify-center gap-[6px] focus-ring md:hidden"
           aria-expanded={open}
           aria-controls="mobile-drawer"
+          aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? 'Close' : 'Menu'}
+          <span
+            className={`h-[2px] w-6 bg-white transition-all duration-300 ease-premium ${
+              open ? 'translate-y-[8px] rotate-45 bg-sky-400' : ''
+            }`}
+          />
+          <span
+            className={`h-[2px] w-6 bg-white transition-opacity duration-200 ease-premium ${
+              open ? 'opacity-0' : 'opacity-100'
+            }`}
+          />
+          <span
+            className={`h-[2px] w-6 bg-white transition-all duration-300 ease-premium ${
+              open ? '-translate-y-[8px] -rotate-45 bg-sky-400' : ''
+            }`}
+          />
         </button>
       </div>
 

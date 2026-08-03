@@ -6,6 +6,7 @@ export const fep: PageContent = {
     title: 'FEP: Front-End Processor',
     subtitle: "The platform's field communication layer",
     navLabel: 'FEP',
+    heroImage: 'hero-fep.jpg',
   },
   blocks: [
     { kind: 'heading', level: 2, text: "Edge / Front-End Processor (FEP): The Platform's Communication Layer" },

@@ -6,6 +6,7 @@ export const dms: PageContent = {
     title: 'DMS: Distribution Management System',
     subtitle: 'Analytical and operational core of the distribution network',
     navLabel: 'DMS',
+    heroImage: 'hero-dms.jpg',
   },
   blocks: [
     {
@@ -110,6 +111,7 @@ export const dms: PageContent = {
       kind: 'paragraph',
       text: 'In practice, it is the difference between a fault that leaves an entire neighbourhood in the dark for hours, until a crew arrives to switch equipment manually, and a fault in which only the small section that was actually damaged is isolated, with the rest of the network restored to power within seconds.',
     },
+    { kind: 'video', src: 'flisr-demo.mp4' },
 
     { kind: 'heading', level: 3, text: 'From the Single-Line Diagram to Automatic Restoration' },
     {
