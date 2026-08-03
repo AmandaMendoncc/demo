@@ -50,6 +50,12 @@ export const oms: PageContent = {
       kind: 'paragraph',
       text: 'For each event, the system maintains a complete history with operational data (time of occurrence, equipment involved, assigned crews, cause of the outage) and impact data (affected consumers, energy not supplied, restoration time, materials, and operational costs).',
     },
+    {
+      kind: 'figure',
+      src: 'oms-operating-scheme.png',
+      alt: 'GridQ OMS operating scheme',
+      caption: 'GridQ OMS operating scheme',
+    },
 
     { kind: 'heading', level: 2, text: 'Scheduled Outage Management' },
     {
