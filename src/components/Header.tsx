@@ -28,29 +28,27 @@ export default function Header() {
   }, [])
 
   const desktopLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `relative py-1 text-sm font-semibold tracking-wide transition-colors duration-300 ease-premium focus-ring after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:rounded-full after:transition-all after:duration-300 after:ease-premium ${
-      isActive
-        ? 'text-white after:w-full after:bg-sky-400'
-        : 'text-slate-300 after:w-0 hover:text-white hover:after:w-full hover:after:bg-sky-400/70'
+    `px-3 py-2 text-sm font-semibold tracking-wide transition-colors duration-300 ease-premium focus-ring ${
+      isActive ? 'text-white' : 'text-slate-400 hover:text-white'
     }`
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 h-16 border-b border-navy-700/80 bg-navy-900/95 shadow-lg shadow-navy-900/30 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-40 h-20 border-b border-navy-700/80 bg-navy-900/95 shadow-lg shadow-navy-900/30 backdrop-blur-md">
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-4 sm:px-6">
-        <NavLink to="/" className="flex items-center gap-2.5 focus-ring" onClick={() => setOpen(false)}>
+        <NavLink to="/" className="flex items-center gap-3 focus-ring" onClick={() => setOpen(false)}>
           <img
             src={`${import.meta.env.BASE_URL}assets/img/logo-sharika-spintech-icon.png`}
             alt=""
-            className="h-8 w-8 sm:h-9 sm:w-9"
+            className="h-9 w-9 sm:h-10 sm:w-10"
             width={132}
             height={130}
           />
-          <span className="text-base font-bold tracking-tight text-white sm:text-lg">
+          <span className="text-lg font-bold tracking-tight text-white sm:text-xl">
             Grid<span className="text-sky-400">Q</span>
           </span>
         </NavLink>
 
-        <nav className="hidden md:flex md:items-center md:gap-8" aria-label="Main navigation">
+        <nav className="hidden md:flex md:items-center md:gap-2" aria-label="Main navigation">
           {NAV_ITEMS.map((item) => (
             <NavLink key={item.to} to={item.to} className={desktopLinkClass} end={item.to === '/'}>
               {item.label}
@@ -81,7 +79,7 @@ export default function Header() {
       {/* Dropdown panel */}
       <div
         id="mobile-drawer"
-        className={`fixed inset-x-0 top-16 z-30 origin-top border-b border-navy-700 bg-navy-900 shadow-2xl transition-all duration-300 ease-premium md:hidden ${
+        className={`fixed inset-x-0 top-20 z-30 origin-top border-b border-navy-700 bg-navy-900 shadow-2xl transition-all duration-300 ease-premium md:hidden ${
           open ? 'visible scale-y-100 opacity-100' : 'invisible scale-y-95 opacity-0'
         }`}
       >

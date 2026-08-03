@@ -2,6 +2,9 @@
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
 @import '@fontsource/inter/700.css';
+@import '@fontsource/source-serif-4/600.css';
+@import '@fontsource/source-serif-4/700.css';
+@import '@fontsource/source-serif-4/600-italic.css';
 
 @tailwind base;
 @tailwind components;
@@ -31,6 +34,26 @@ body {
 .focus-ring:focus-visible {
   outline: 3px solid #1FA6E0;
   outline-offset: 2px;
+}
+
+/* Pull each heading tight to the content that belongs to it (its own
+   paragraph/list/table), so the larger gap above the heading reads as the
+   real separation between one section/item and the next. Without this,
+   every block has the same margin and long runs of headings read as an
+   undifferentiated stream instead of organized groups. */
+.content-flow > h2 + p,
+.content-flow > h3 + p,
+.content-flow > h4 + p,
+.content-flow > h2 + ul,
+.content-flow > h3 + ul,
+.content-flow > h4 + ul,
+.content-flow > h2 + ol,
+.content-flow > h3 + ol,
+.content-flow > h4 + ol,
+.content-flow > h2 + table,
+.content-flow > h3 + table,
+.content-flow > h4 + table {
+  margin-top: 0.5rem;
 }
 
 /* Shared "premium" surface: resting shadow that lifts on hover, used by cards,

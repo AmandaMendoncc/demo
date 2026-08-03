@@ -15,9 +15,8 @@ function Heading({ level, text }: { level: 2 | 3 | 4; text: string }) {
     return (
       <h2
         id={id}
-        className="mt-16 mb-6 scroll-mt-24 border-b-2 border-sky-200 pb-3 text-2xl font-bold tracking-tight text-navy-900 sm:text-3xl"
+        className="mt-16 mb-4 scroll-mt-24 border-b border-slate-200 pb-3 font-display text-2xl font-semibold text-navy-900 sm:text-3xl"
       >
-        <span className="mr-3 inline-block h-2.5 w-2.5 bg-sky-500 align-middle" aria-hidden="true" />
         {text}
       </h2>
     )
@@ -25,21 +24,14 @@ function Heading({ level, text }: { level: 2 | 3 | 4; text: string }) {
 
   if (level === 3) {
     return (
-      <h3
-        id={id}
-        className="mt-12 mb-4 scroll-mt-24 border-l-4 border-sky-400 pl-4 text-xl font-bold text-navy-900 sm:text-2xl"
-      >
+      <h3 id={id} className="mt-10 mb-2 scroll-mt-24 text-lg font-semibold text-navy-900 sm:text-xl">
         {text}
       </h3>
     )
   }
 
   return (
-    <h4
-      id={id}
-      className="mt-8 mb-2 scroll-mt-24 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-sky-700 sm:text-base"
-    >
-      <span className="h-1.5 w-1.5 shrink-0 bg-sky-500" aria-hidden="true" />
+    <h4 id={id} className="mt-6 mb-1 scroll-mt-24 text-sm font-semibold uppercase tracking-wide text-sky-700">
       {text}
     </h4>
   )
@@ -47,7 +39,7 @@ function Heading({ level, text }: { level: 2 | 3 | 4; text: string }) {
 
 export default function BlockRenderer({ blocks }: { blocks: Block[] }) {
   return (
-    <>
+    <div className="content-flow mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
       {blocks.map((block, i) => {
         switch (block.kind) {
           case 'heading':
@@ -55,19 +47,19 @@ export default function BlockRenderer({ blocks }: { blocks: Block[] }) {
             return <Heading key={i} level={block.level} text={block.text} />
           case 'paragraph':
             return (
-              <p key={i} className="my-5 max-w-prose leading-[1.75] text-ink-900/90">
+              <p key={i} className="my-4 leading-[1.75] text-ink-900/90">
                 {block.text}
               </p>
             )
           case 'list':
             return block.ordered ? (
-              <ol key={i} className="my-5 max-w-prose list-decimal space-y-2 pl-6 marker:font-semibold marker:text-sky-600">
+              <ol key={i} className="my-4 list-decimal space-y-2 pl-6 leading-[1.75] marker:font-semibold marker:text-sky-600">
                 {block.items.map((item, j) => (
                   <li key={j}>{item}</li>
                 ))}
               </ol>
             ) : (
-              <ul key={i} className="my-5 max-w-prose list-disc space-y-2 pl-6 marker:text-sky-500">
+              <ul key={i} className="my-4 list-disc space-y-2 pl-6 leading-[1.75] marker:text-sky-500">
                 {block.items.map((item, j) => (
                   <li key={j}>{item}</li>
                 ))}
@@ -83,7 +75,7 @@ export default function BlockRenderer({ blocks }: { blocks: Block[] }) {
             return (
               <blockquote
                 key={i}
-                className="my-6 max-w-prose rounded-r-md border-l-4 border-sky-400 bg-sky-50 px-4 py-3 text-ink-900/80"
+                className="my-6 rounded-r-md border-l-4 border-sky-400 bg-sky-50 px-5 py-4 text-ink-900/80"
               >
                 {block.text}
               </blockquote>
@@ -109,6 +101,6 @@ export default function BlockRenderer({ blocks }: { blocks: Block[] }) {
             return null
         }
       })}
-    </>
+    </div>
   )
 }

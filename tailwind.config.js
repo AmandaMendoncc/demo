@@ -37,6 +37,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['"Source Serif 4"', 'ui-serif', 'Georgia', 'serif'],
       },
       maxWidth: {
         prose: '72ch',

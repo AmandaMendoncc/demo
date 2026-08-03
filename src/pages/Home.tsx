@@ -38,7 +38,7 @@ export default function Home() {
       <PageLayout {...home} />
       <section
         ref={cardsReveal.ref}
-        className={`relative overflow-hidden bg-gradient-to-b from-sky-50/70 to-white py-16 sm:py-20 ${cardsReveal.className}`}
+        className={`relative overflow-hidden bg-gradient-to-b from-sky-50/70 to-white py-20 sm:py-28 ${cardsReveal.className}`}
         aria-labelledby="nav-cards-heading"
       >
         <div
@@ -49,20 +49,20 @@ export default function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-navy-700/10 blur-3xl"
         />
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-6">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-sky-600">Explore the modules</p>
-          <h2 id="nav-cards-heading" className="mb-2 text-2xl font-bold tracking-tight text-navy-900 sm:text-3xl">
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-sky-600">Explore the modules</p>
+          <h2 id="nav-cards-heading" className="mb-3 font-display text-2xl font-bold tracking-tight text-navy-900 sm:text-3xl">
             Technical Detail
           </h2>
-          <p className="mb-10 max-w-prose text-ink-900/70">
+          <p className="mb-12 max-w-prose text-ink-900/70">
             Explore the complete functional design of each module in the GridQ platform.
           </p>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {NAV_CARDS.map((card) => (
               <Link
                 key={card.to}
                 to={card.to}
-                className="group relative flex flex-col overflow-hidden border border-slate-200 bg-white p-6 shadow-soft transition-all duration-300 ease-premium hover:-translate-y-1 hover:border-sky-400 hover:shadow-elevated focus-ring"
+                className="group relative flex flex-col overflow-hidden border border-slate-200 bg-white p-7 shadow-soft transition-all duration-300 ease-premium hover:-translate-y-1 hover:border-sky-400 hover:shadow-elevated focus-ring"
               >
                 <span
                   aria-hidden="true"
