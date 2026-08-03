@@ -107,6 +107,5 @@ export const scada: PageContent = {
       kind: 'paragraph',
       text: 'The system presents, in real time, voltage values, deviation alarms, historical trends, and operational indicators, allowing the rapid identification of overvoltage or undervoltage conditions. This information supports decision-making for executing switching operations, changing transformer taps, controlling capacitor banks, and other actions needed to keep voltage levels within technical and regulatory standards, ensuring greater reliability, quality of supply, and operational safety.',
     },
-    { kind: 'video' },
   ],
 }

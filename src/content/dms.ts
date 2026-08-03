@@ -116,7 +116,6 @@ export const dms: PageContent = {
       kind: 'paragraph',
       text: 'The network operates normally, with all reclosers closed (green indication); a spontaneous opening occurs on one of the reclosers due to protection operation; the system identifies the section between the two reclosers closest to the opening as the probable fault area; that section is isolated; and both the upstream and downstream sections are restored, the downstream section often through an alternative source, via a tie switch, when one exists in the topology.',
     },
-    { kind: 'video' },
 
     { kind: 'heading', level: 3, text: 'What Triggers FLISR' },
     { kind: 'heading', level: 4, text: 'Permanent Fault' },
