@@ -213,7 +213,7 @@ export const oms: PageContent = {
       ],
     },
 
-    { kind: 'heading', level: 4, text: 'Example Report Links' },
+    { kind: 'heading', level: 4, text: 'Report Links' },
     {
       kind: 'reportLinks',
       items: [

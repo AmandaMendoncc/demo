@@ -92,7 +92,13 @@ export const scada: PageContent = {
       kind: 'paragraph',
       text: 'The substation presented in the demonstration is SE Planaltina, located in the Administrative Region of Planaltina, Federal District. This region serves an extensive urban and rural area, playing an important role in supplying power to residential, commercial, industrial, and essential public-service consumers. The interface demonstrates how the operator visualizes the substation topology, tracks the state of switches and circuit breakers, monitors electrical quantities, and executes switching operations in a safe and traceable manner.',
     },
-    { kind: 'video' },
+    {
+      kind: 'figure',
+      src: 'scada-demo.png',
+      alt: 'GridQ SCADA distribution network overview, Brasília',
+      caption: 'GridQ SCADA distribution network overview, Brasília',
+    },
+    { kind: 'video', src: 'scada-demo.mp4', poster: 'scada-demo.png' },
     {
       kind: 'paragraph',
       text: 'In addition to operational supervision, GridQ SCADA offers specialized applications for monitoring the voltage quality of the electrical network. Through a dedicated interface, operators continuously track the voltage levels of substation busbars, verifying their compliance with established operational limits.',

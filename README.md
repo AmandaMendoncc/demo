@@ -88,7 +88,8 @@ src/
 │  ├─ BoxList.tsx / BoxGrid.tsx — blocos "caixa" (listas com título, 1 a 4 colunas)
 │  ├─ FigureBlock.tsx        — figura sobre fundo cream, borda azul clara, scroll + Enlarge
 │  ├─ Lightbox.tsx           — modal fullscreen com zoom/pinch para diagramas grandes
-│  ├─ VideoPlaceholder.tsx   — moldura tracejada "Video" para as seções de Demo Application
+│  ├─ DemoVideo.tsx          — vídeo real (`<video controls>`) quando o bloco tem `src`;
+│  │                           cai no placeholder tracejado "Video" quando não tem
 │  └─ ReportLinks.tsx        — lista de links de relatório (placeholder, sem arquivo anexado)
 ├─ content/                  — texto por página + tipos + dimensões de imagem
 └─ pages/                    — Home, Fep, Scada, Dms, Oms (montam PageLayout + conteúdo)
@@ -100,7 +101,30 @@ Não há dependência de ícones (`lucide-react` foi removida do projeto); toda 
 apenas tipografia, cor e bordas. Também não há mais o componente `ProductDemo`
 ("Watch demo" genérico no topo da página) — cada página agora traz sua própria seção
 "Demo Application" com texto real e placeholders de vídeo posicionados no meio do
-conteúdo, onde o documento fonte os indica.
+conteúdo, onde o documento fonte os indica; alguns desses blocos já têm vídeo/imagem
+reais (ver seção "Demos reais" abaixo), outros seguem como placeholder até receber mídia.
+
+## Demos reais (FEP e SCADA)
+
+Duas seções de "Demo Application" já têm mídia real, enviada pelo cliente:
+
+- **FEP** (`/fep`): `fep-demo.jpeg` (mapa georreferenciado, Rio de Janeiro) como figura,
+  seguido de `fep-demo.mp4` como vídeo (com a própria imagem como poster).
+- **SCADA** (`/scada`): `scada-demo.png` (visão geral da rede, Brasília) como figura,
+  seguido de `scada-demo.mp4` (SE Planaltina) como vídeo. **A imagem `scada-demo.png`
+  foi editada** — o logotipo "Neoenergia" que aparecia no canto superior direito da
+  toolbar foi removido por preenchimento de pixel (cor sólida idêntica ao fundo da
+  própria toolbar), a pedido do cliente. O vídeo `scada-demo.mp4` foi inspecionado
+  quadro a quadro (amostragem em toda a duração) e **não contém** esse logotipo em
+  nenhum momento, então não precisou de edição.
+
+O segundo placeholder de vídeo da página SCADA (aplicação de qualidade de tensão)
+continua sem mídia, por não ter sido enviado nenhum arquivo para ele.
+
+Vídeos são servidos como arquivo estático de `public/assets/img/` com
+`preload="metadata"` (não baixam o arquivo inteiro até o usuário dar play) — os
+arquivos são grandes (~8 MB e ~25 MB), o que é aceitável para GitHub Pages mas vale
+lembrar se o projeto crescer muito nessa direção.
 
 ## Mapeamento de figuras por página
 

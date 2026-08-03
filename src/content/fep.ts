@@ -144,7 +144,13 @@ export const fep: PageContent = {
       kind: 'paragraph',
       text: 'The solution monitors, in real time, more than 15 thousand field devices, including switches, reclosers, voltage regulators, capacitor banks, meters, sensors, and other intelligent devices on the electrical network. The system maintains continuous communication with this equipment, ensuring high availability in data collection and making up-to-date information available to the utility’s corporate systems.',
     },
-    { kind: 'video', label: 'Map view: video placeholder, to be inserted' },
+    {
+      kind: 'figure',
+      src: 'fep-demo.jpeg',
+      alt: 'Georeferenced map of GridQ Edge field devices in Rio de Janeiro',
+      caption: 'Georeferenced map, GridQ Edge, Rio de Janeiro distribution network',
+    },
+    { kind: 'video', src: 'fep-demo.mp4', poster: 'fep-demo.jpeg' },
     {
       kind: 'paragraph',
       text: 'To provide an operational and strategic view of the monitored infrastructure, GridQ Edge offers monitoring dashboards that show the communication status of equipment, availability indicators, failure statistics, communication performance, number of events processed, active alarms, and other information that supports platform management and the proactive identification of problems.',

@@ -7,7 +7,7 @@ export type Block =
   | { kind: 'boxgrid'; columns: { title: string; items: string[] }[] }
   | { kind: 'figure'; src: string; alt: string; caption: string }
   | { kind: 'note'; text: string }
-  | { kind: 'video'; label?: string }
+  | { kind: 'video'; label?: string; src?: string; poster?: string }
   | { kind: 'reportLinks'; items: string[] }
 
 export interface PageMeta {

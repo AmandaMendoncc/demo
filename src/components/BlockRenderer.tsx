@@ -5,7 +5,7 @@ import DataTable from './DataTable'
 import BoxList from './BoxList'
 import BoxGrid from './BoxGrid'
 import FigureBlock from './FigureBlock'
-import VideoPlaceholder from './VideoPlaceholder'
+import DemoVideo from './DemoVideo'
 import ReportLinks from './ReportLinks'
 
 const HEADING_CLASSES: Record<2 | 3 | 4, string> = {
@@ -79,7 +79,7 @@ export default function BlockRenderer({ blocks }: { blocks: Block[] }) {
             )
           }
           case 'video':
-            return <VideoPlaceholder key={i} label={block.label} />
+            return <DemoVideo key={i} label={block.label} src={block.src} poster={block.poster} />
           case 'reportLinks':
             return <ReportLinks key={i} items={block.items} />
           default:
