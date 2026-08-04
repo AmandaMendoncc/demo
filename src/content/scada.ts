@@ -83,7 +83,7 @@ export const scada: PageContent = {
     { kind: 'heading', level: 2, text: 'Demo Application' },
     {
       kind: 'paragraph',
-      text: 'The GridQ SCADA presented in this demonstration is based on a real application used in the operation and supervision of the electrical distribution network of the capital of Brazil, responsible for serving approximately 3 million inhabitants.',
+      text: 'The Spin Engenharia solution presented in this demonstration is based on a real application used in the operation and supervision of the electrical distribution network of the capital of Brazil, responsible for serving approximately 3 million inhabitants.',
     },
     {
       kind: 'paragraph',

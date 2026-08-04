@@ -46,7 +46,7 @@ export default function Header() {
             height={130}
           />
           <span className="text-lg font-bold tracking-tight text-white sm:text-xl">
-            Grid<span className="text-sky-400">Q</span>
+            Spin<span className="text-sky-400"> Engenharia</span>
           </span>
         </NavLink>
 
