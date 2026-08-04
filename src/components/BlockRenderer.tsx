@@ -7,6 +7,7 @@ import BoxGrid from './BoxGrid'
 import FigureBlock from './FigureBlock'
 import DemoVideo from './DemoVideo'
 import ReportLinks from './ReportLinks'
+import ScadaLayers from './ScadaLayers'
 
 function Heading({ level, text }: { level: 2 | 3 | 4; text: string }) {
   const id = headingId(text)
@@ -97,6 +98,8 @@ export default function BlockRenderer({ blocks }: { blocks: Block[] }) {
             return <DemoVideo key={i} label={block.label} src={block.src} poster={block.poster} />
           case 'reportLinks':
             return <ReportLinks key={i} items={block.items} />
+          case 'scadaLayers':
+            return <ScadaLayers key={i} />
           default:
             return null
         }

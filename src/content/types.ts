@@ -9,6 +9,7 @@ export type Block =
   | { kind: 'note'; text: string }
   | { kind: 'video'; label?: string; src?: string; poster?: string }
   | { kind: 'reportLinks'; items: { label: string; file: string }[] }
+  | { kind: 'scadaLayers' }
 
 export interface PageMeta {
   route: string
