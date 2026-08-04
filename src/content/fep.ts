@@ -143,7 +143,27 @@ export const fep: PageContent = {
     },
     {
       kind: 'paragraph',
-      text: 'The solution monitors, in real time, more than 15 thousand field devices, including switches, reclosers, voltage regulators, capacitor banks, meters, sensors, and other intelligent devices on the electrical network. The system maintains continuous communication with this equipment, ensuring high availability in data collection and making up-to-date information available to the utility’s corporate systems.',
+      text: 'The project was developed in just over three months. In the first phase, more than 1,000 devices were implemented, demonstrating high productivity and standardisation in the development process.',
+    },
+    {
+      kind: 'paragraph',
+      text: 'This result was made possible by adopting a methodology based on equipment libraries. Rather than modelling each asset individually, a structured database was built from the equipment types present in the distribution network, enabling the reuse of standardised models and significantly accelerating deployment.',
+    },
+    {
+      kind: 'figure',
+      src: 'fep-equipment-library.png',
+      alt: 'GridQ Edge equipment library — number of models by type',
+      caption: 'Equipment library — models by type, Rio de Janeiro distribution network',
+    },
+    {
+      kind: 'paragraph',
+      text: 'Currently, the solution has a comprehensive equipment library covering various models of reclosers, sectionalising switches, voltage regulators, capacitor banks, transformers, and other assets typical of electrical distribution networks. This approach ensures greater consistency in modelling, facilitates system maintenance, and reduces the time required to incorporate new equipment and network expansions.',
+    },
+
+    { kind: 'heading', level: 3, text: 'User Interface' },
+    {
+      kind: 'paragraph',
+      text: 'The solution monitors, in real time, more than 15,000 field devices, including switches, reclosers, voltage regulators, capacitor banks, meters, sensors, and other intelligent devices on the electrical network. The system maintains continuous communication with these devices, ensuring high availability in data collection and making up-to-date information available to the utility’s corporate systems.',
     },
     {
       kind: 'figure',
@@ -154,11 +174,11 @@ export const fep: PageContent = {
     { kind: 'video', src: 'fep-demo.mp4', poster: 'fep-demo.jpeg' },
     {
       kind: 'paragraph',
-      text: 'To provide an operational and strategic view of the monitored infrastructure, GridQ Edge offers monitoring dashboards that show the communication status of equipment, availability indicators, failure statistics, communication performance, number of events processed, active alarms, and other information that supports platform management and the proactive identification of problems.',
+      text: 'To provide an operational and strategic view of the monitored infrastructure, GridQ Edge offers monitoring dashboards that present the communication status of devices, availability indicators, failure statistics, communication performance, number of events processed, active alarms, and other information that supports platform management and the proactive identification of issues.',
     },
     {
       kind: 'paragraph',
-      text: 'The solution also offers mechanisms for registering, changing, deleting, and parameterizing equipment in operation, allowing network expansions, device replacements, and configuration adjustments to be carried out dynamically, without interrupting services or making the application unavailable. This capability significantly reduces the impact of maintenance activities and increases the platform’s operational availability.',
+      text: 'The solution also offers mechanisms for registering, modifying, deleting, and configuring devices in operation, allowing network expansions, device replacements, and configuration adjustments to be carried out dynamically, without interrupting services or making the application unavailable. This capability significantly reduces the impact of maintenance activities and increases the platform’s operational availability.',
     },
     {
       kind: 'paragraph',
