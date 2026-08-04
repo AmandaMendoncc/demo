@@ -9,7 +9,7 @@ export const home: PageContent = {
     heroImage: 'hero-home.jpg',
   },
   blocks: [
-    { kind: 'heading', level: 2, text: 'GridQ: Integrated SCADA, ADMS, and OMS Platform' },
+    { kind: 'heading', level: 2, text: 'GridQ: Integrated SCADA, DMS, and OMS Platform' },
     {
       kind: 'paragraph',
       text: 'GridQ is a unified software platform, developed to provide supervision, control, analysis, automation, and complete operational management of electrical power distribution networks. Unlike architectures that integrate independent products through fragile interfaces, GridQ delivers all operational and analytical functions on a single product platform, ensuring that all applications share the same network model and that operators have a unified user experience, from telemetry monitoring to network analysis and outage management.',
