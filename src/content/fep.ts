@@ -139,7 +139,7 @@ export const fep: PageContent = {
     { kind: 'heading', level: 2, text: 'Demo Application' },
     {
       kind: 'paragraph',
-      text: 'The Spin Engenharia solution presented in this demonstration is based on a real application used in the acquisition, processing, and distribution of operational data for the electrical distribution network of the state of Rio de Janeiro (excluding the capital).',
+      text: 'The GridQ Edge presented in this demonstration is based on a real application used in the acquisition, processing, and distribution of operational data for the electrical distribution network of the state of Rio de Janeiro (excluding the capital).',
     },
     {
       kind: 'paragraph',
